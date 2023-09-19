@@ -28,7 +28,7 @@
         "ext-json": "*",
         "ext-pcntl": "*",
         "yosymfony/resource-watcher": "^2.0",
-        "symfony/console": "^4.3 || ^5.0 || ^6.0",
+        "symfony/console": "^6.2",
         "react/event-loop": "^1.4.0",
         "symfony/yaml": "^4.3 || ^5.0",
         "react/child-process": "^0.7.x-dev",
@@ -52,12 +52,10 @@
     "require-dev": {
         "symfony/process": "^7.0.x-dev",
         "phpunit/phpunit": "^8.0",
-        "react/async": "^4.1.0",
-        "vimeo/psalm": "^3.8"
+        "react/async": "^4.1.0"
     },
 
     "scripts": {
-      "ci:php:psalm": "vendor/bin/psalm --show-info=false",
       "ci:tests": "vendor/bin/phpunit tests"
     },
     "minimum-stability": "alpha"
