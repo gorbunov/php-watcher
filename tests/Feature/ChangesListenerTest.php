@@ -3,13 +3,12 @@
 namespace seregazhuk\PhpWatcher\Tests\Feature;
 
 use PHPUnit\Framework\TestCase;
-use React\EventLoop\Factory;
+use React\EventLoop\Loop;
 use seregazhuk\PhpWatcher\Config\WatchList;
 use seregazhuk\PhpWatcher\Filesystem\ResourceWatcherBased\ChangesListener;
 use seregazhuk\PhpWatcher\Tests\Feature\Helper\Filesystem;
 use seregazhuk\PhpWatcher\Tests\Feature\Helper\WithFilesystem;
-
-use function Clue\React\Block\sleep;
+use function React\Async\delay;
 
 final class ChangesListenerTest extends TestCase
 {
@@ -18,7 +17,7 @@ final class ChangesListenerTest extends TestCase
     /** @test */
     public function it_emits_change_event_on_changes(): void
     {
-        $loop = Factory::create();
+        $loop = Loop::get();
         $listener = new ChangesListener($loop);
         $listener->start(new WatchList([Filesystem::fixturesDir()]));
 
@@ -27,7 +26,7 @@ final class ChangesListenerTest extends TestCase
         $listener->on('change', static function () use (&$eventWasEmitted) {
             $eventWasEmitted = true;
         });
-        sleep(4, $loop); // to be sure changes have been detected
+        delay(4); // to be sure changes have been detected
 
         $this->assertTrue($eventWasEmitted, '"change" event should be emitted');
     }

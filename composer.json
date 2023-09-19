@@ -1,5 +1,5 @@
 {
-    "name": "seregazhuk/php-watcher",
+    "name": "gorbunov/php-watcher",
     "type": "library",
     "description": "Automatically restart PHP application once the source code changes",
     "license": "MIT",
@@ -19,7 +19,7 @@
         {
             "name": "Sergey Zhuk",
             "email": "seregazhuk88@gmail.com",
-            "homepage": "http://sergeyzhuk.me",
+            "homepage": "https://sergeyzhuk.me",
             "role": "Developer"
         }
     ],
@@ -28,11 +28,11 @@
         "ext-json": "*",
         "ext-pcntl": "*",
         "yosymfony/resource-watcher": "^2.0",
-        "symfony/console": "^4.3 || ^5.0",
-        "react/event-loop": "^1.1",
+        "symfony/console": "^4.3 || ^5.0 || ^6.0",
+        "react/event-loop": "^1.4.0",
         "symfony/yaml": "^4.3 || ^5.0",
-        "react/child-process": "^0.6.1",
-        "react/stream": "^1.0.0",
+        "react/child-process": "^v0.6.5",
+        "react/stream": "^1.3.0",
         "symfony/finder": "^4.3 || ^5.0",
         "alecrabbit/php-cli-snake": "^0.5"
     },
@@ -50,9 +50,9 @@
         "php-watcher"
     ],
     "require-dev": {
-        "symfony/process": "^4.3",
+        "symfony/process": "^6.3.4",
         "phpunit/phpunit": "^8.0",
-        "clue/block-react": "^1.3",
+        "react/async": "^4.1.0",
         "vimeo/psalm": "^3.8"
     },
 
