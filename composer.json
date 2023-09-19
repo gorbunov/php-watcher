@@ -50,7 +50,7 @@
         "php-watcher"
     ],
     "require-dev": {
-        "symfony/process": "^6.3.4",
+        "symfony/process": "^7.0.x-dev",
         "phpunit/phpunit": "^8.0",
         "react/async": "^4.1.0",
         "vimeo/psalm": "^3.8"
